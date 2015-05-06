@@ -91,3 +91,9 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+Capybara.configure do | config |
+  config.run_server = false
+  config.current_driver = :selenium
+  config.app_host = "http://127.0.0.1:3000/"
+end
