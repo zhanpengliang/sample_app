@@ -10,28 +10,37 @@
 #end
 #
 require 'spec_helper'
+require 'support/utilities'
 
 describe "Static pages" do
 
+  subject { page }
+
   describe "Home page" do
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('Sample App')
-    end
+    before { visit "" }
+
+    it { should have_content('Sample App') }
+    it { should have_title(full_title('Home')) }
   end
 
   describe "Help page" do
-    it "should hava the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
+    before { visit "help" }
+
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
   describe "About page" do
-    it "should have the content 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About Us')
-    end
+    before { visit "about" }
+
+    it { should have_content('About') }
+    it { should have_title(full_title('About Us')) }
   end
 
+  describe "Contact page" do
+    before { visit "contact" }
+
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
+  end
 end
