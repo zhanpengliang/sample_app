@@ -1,4 +1,7 @@
 SampleApp::Application.routes.draw do
+
+  #map.connect '',:controller=>"index",:action=>"index"
+  resources :users
   root to: 'static_pages#home'
 
   match '/help', to: 'static_pages#help', via: 'get'

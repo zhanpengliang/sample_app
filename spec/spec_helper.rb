@@ -25,6 +25,8 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
+ # config.include Rails.application.routes.url_helpers
+  
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
